@@ -13,7 +13,7 @@ from utils import charts,processing,gui
 from PIL import Image
 import base64
 import plotly.express as px
-image = Image.open('SnowGov.png')
+image = Image.open('Hackathon/SnowGov.png')
 def get_custom_css():
 
     return """ <style>
@@ -45,7 +45,7 @@ SNOWFLAKE_CONFIG = {
     "database": "UTIL_DB",
     "schema": "ADMIN_TOOLS"
 }
-with open ('styles_1.css') as f:
+with open ('Hackathon/styles_1.css') as f:
         st.markdown(f'<style>{f.read()}</style>',unsafe_allow_html=True)
 
 if "grant_users" not in st.session_state:
@@ -244,7 +244,7 @@ def user_creation_page():
     col1, col2 = st.columns([1,20])
 
     with col1:
-        im = Image.open("User-Title.png")
+        im = Image.open("Hackathon/User-Title.png")
         st.image(im, width=24)
 
     with col2:
@@ -297,7 +297,7 @@ def role_manage():
     col1, col2 = st.columns([1,20])
 
     with col1:
-        im = Image.open("Role-Title.png")
+        im = Image.open("Hackathon/Role-Title.png")
         st.image(im,width=24)
 
     with col2:
@@ -710,7 +710,7 @@ def monitor():
     col1, col2 = st.columns([1,20])
 
     with col1:
-        im = Image.open("Monitor-Title.png")
+        im = Image.open("Hackathon/Monitor-Title.png")
         st.image(im, width=24)
 
     with col2:

@@ -31,9 +31,26 @@ def get_custom_css():
     color: red;  /* Change to your desired color for the font in the sidebar */
 }
 </style>"""
-custom_css = get_custom_css()
-st.markdown(custom_css, unsafe_allow_html=True)
-st.sidebar.image(image, caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        padding: 50px;
+    }
+
+    .sidebar img{
+        position: absolute;
+        top: 100;
+        left: 50;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Add the image to the sidebar
+st.sidebar.image('Hackathon/SnowGov.png', use_column_width=True)
+st.sidebar.markdown('<style>div.block-container{padding-top:0rem;}</style>',unsafe_allow_html=True)
 #snowflake_config = st.secrets["sf_usage_app"]
 #connect to snowflake function
 SNOWFLAKE_CONFIG = {
